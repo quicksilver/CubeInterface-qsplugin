@@ -107,8 +107,8 @@
 }
 
 
-- (int) glassType { return glassType;  }
-- (void)setGlassType: (int) newGlassType
+- (NSInteger) glassType { return glassType;  }
+- (void)setGlassType: (NSInteger) newGlassType
 {
   glassType = newGlassType;
 	[self setNeedsDisplay:YES];

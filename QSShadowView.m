@@ -83,8 +83,8 @@
 
 
 
-- (float) blur { return blur; }
-- (void) setBlur: (float) newBlur
+- (CGFloat) blur { return blur; }
+- (void) setBlur: (CGFloat) newBlur
 {
     blur = newBlur;
 	[self setNeedsDisplay:YES];
@@ -93,8 +93,8 @@
 }
 
 
-- (float) distance { return distance; }
-- (void) setDistance: (float) newDistance
+- (CGFloat) distance { return distance; }
+- (void) setDistance: (CGFloat) newDistance
 {
     distance = newDistance;
 	[self setNeedsDisplay:YES];
@@ -103,8 +103,8 @@
 }
 
 
-- (float) angle { return angle; }
-- (void) setAngle: (float) newAngle
+- (CGFloat) angle { return angle; }
+- (void) setAngle: (CGFloat) newAngle
 {
     angle = newAngle;
 	[self setNeedsDisplay:YES];
@@ -113,8 +113,8 @@
 }
 
 
-- (float) expand { return expand; }
-- (void) setExpand: (float) newExpand
+- (CGFloat) expand { return expand; }
+- (void) setExpand: (CGFloat) newExpand
 {
     expand = newExpand;
 	[self setNeedsDisplay:YES];
