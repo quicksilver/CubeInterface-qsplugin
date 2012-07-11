@@ -28,19 +28,6 @@
 - (id)init {
   return [self initWithWindowNibName:@"QSCubeInterface"];
 }
-- (void)loadPreferences {
-	
-	
-}
-
-- (IBAction)searchForString:(id)sender {
-  NSString *string = [sender stringValue];
-  NSLog(@"strings %@", string);
-  
-  
-  
-}
-
 
 
 - (void)resignKeyWindow {
