@@ -18,6 +18,7 @@
 	CGFloat expand;
 }
 - (NSRect)paddedFrameForFrame:(NSRect)frame;
+- (void)updatePosition;
 
 - (NSView *) targetView;
 - (void) setTargetView: (NSView *) newTargetView;
