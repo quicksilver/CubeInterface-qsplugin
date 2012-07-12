@@ -37,9 +37,6 @@
 #define HUGEOFFSET 10000
 - (void)drawRect:(NSRect)rect {
 	rect=[self frame];
-	
-//	[[NSColor blueColor] set];
-//	NSFrameRect(rect);
 	[NSGraphicsContext saveGraphicsState]; 
 	NSShadow* theShadow = [[NSShadow alloc] init]; 
 	[theShadow setShadowOffset:NSMakeSize(0.0,-NSHeight(rect))]; // Offset the shadow by the height of the window
@@ -81,8 +78,6 @@
 
 }
 
-
-
 - (CGFloat) blur { return blur; }
 - (void) setBlur: (CGFloat) newBlur
 {
@@ -91,7 +86,6 @@
 	[self updatePosition];
 
 }
-
 
 - (CGFloat) distance { return distance; }
 - (void) setDistance: (CGFloat) newDistance
@@ -102,7 +96,6 @@
 
 }
 
-
 - (CGFloat) angle { return angle; }
 - (void) setAngle: (CGFloat) newAngle
 {
@@ -111,7 +104,6 @@
 	[self updatePosition];
 
 }
-
 
 - (CGFloat) expand { return expand; }
 - (void) setExpand: (CGFloat) newExpand
@@ -122,14 +114,11 @@
 
 }
 
-
-
 - (void) dealloc
 {
     [self setTargetView: nil];
     [self setColor: nil];
     [super dealloc];
 }
-
 
 @end

@@ -32,7 +32,4 @@
 - (CGFloat) expand;
 - (void) setExpand: (CGFloat) newExpand;
 
-
-
-
 @end
