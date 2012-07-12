@@ -31,17 +31,11 @@
 
 
 - (void)resignKeyWindow {
-	NSLog(@"resign"); 	
   [[self shadowWindow] orderOut:nil];
   
   [[self backdropWindow] orderOut:nil];
   [super resignKeyWindow];
 }
-
-- (void)windowDidExpose:(NSNotification *)aNotification {
-	NSLog(@"expose"); 	
-}
-
 
 - (NSWindow *)shadowWindow {
 	if (!shadowWindow) {
