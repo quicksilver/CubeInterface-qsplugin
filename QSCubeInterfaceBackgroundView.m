@@ -12,21 +12,16 @@
 
 - (id)initWithFrame:(NSRect)frame {
   self = [super initWithFrame:frame];
-  if (self) {
-    // Initialization code here.
-  }
   return self;
 }
 
 - (void)drawRect:(NSRect)rect {
-	//[super drawRect:rect];
   
 	NSBezierPath *cornerEraser = nil;
 	NSRect fullRect = [self convertRect:[self frame] fromView:[self superview]];
 	
 	if (![[self window] isOpaque] && [[self window] contentView] == self && [[self window] backgroundColor] == [NSColor clearColor]) {
 		cornerEraser = [NSBezierPath bezierPath];
-		//logRect([self frame]);
 		[cornerEraser appendBezierPathWithRoundedRectangle:fullRect withRadius:8];
 		[cornerEraser addClip];
 	}
@@ -37,9 +32,7 @@
   NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:startColor
                                                         endingColor:endColor] autorelease];
 	[gradient drawInRect:fullRect angle: 270];
-  
-//	QSFillRectWithGradientFromEdge(fullRect, startColor, endColor, NSMaxYEdge);
-	
+
   
 	if 	(glassType >= 0) {
     [[NSGraphicsContext currentContext] saveGraphicsState];
@@ -47,10 +40,6 @@
 		[highlightColor set];
 		NSRectFillUsingOperation(fullRect, NSCompositeSourceOver);
     
-    //NSGradient *gradient = [[[NSGradient alloc] initWithStartingColor:highlightColor
-//                                                          endingColor:[highlightColor colorWithAlphaComponent:0.8]] autorelease];
-//    [gradient drawInRect:fullRect angle: 90];
-//    
     [[NSGraphicsContext currentContext] restoreGraphicsState];
 	}
 	
@@ -107,8 +96,8 @@
 }
 
 
-- (int) glassType { return glassType;  }
-- (void)setGlassType: (int) newGlassType
+- (NSInteger) glassType { return glassType;  }
+- (void)setGlassType: (NSInteger) newGlassType
 {
   glassType = newGlassType;
 	[self setNeedsDisplay:YES];

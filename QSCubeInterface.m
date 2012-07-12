@@ -7,19 +7,6 @@
 //
 
 #import "QSCubeInterface.h"
-//#define OLDQS 0
-//#if OLDQS
-//#import <QSFoundation/NSGeometry_BLTRExtensions.h>
-//#import <QSEffects/QSWindow.h>
-//#import <QSCore/QSMacros.h>
-//#import <QSInterface/QSSearchObjectView.h>
-//#import <QSInterface/QSInterface.h>
-//#import <QSInterface/QSObjectCell.h>
-//
-//#import <QSEffects/QSCGSTransition.h>
-//#else
-//
-//#endif
 
 #import "QSShadowView.h"
 
@@ -28,33 +15,14 @@
 - (id)init {
   return [self initWithWindowNibName:@"QSCubeInterface"];
 }
-- (void)loadPreferences {
-	
-	
-}
-
-- (IBAction)searchForString:(id)sender {
-  NSString *string = [sender stringValue];
-  NSLog(@"strings %@", string);
-  
-  
-  
-}
-
 
 
 - (void)resignKeyWindow {
-	NSLog(@"resign"); 	
   [[self shadowWindow] orderOut:nil];
   
   [[self backdropWindow] orderOut:nil];
   [super resignKeyWindow];
 }
-
-- (void)windowDidExpose:(NSNotification *)aNotification {
-	NSLog(@"expose"); 	
-}
-
 
 - (NSWindow *)shadowWindow {
 	if (!shadowWindow) {
@@ -123,11 +91,7 @@
                       options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName
                                                                         forKey:@"NSValueTransformerName"]];
     [window display];
-		[[NSUserDefaultsController sharedUserDefaultsController]
-     addObserver:self
-     forKeyPath:@"values.interface.backdropColor" 
-     options:nil context:backdropWindow];
-		
+		[[NSUserDefaultsController sharedUserDefaultsController] addObserver:self forKeyPath:@"values.interface.backdropColor" options:0 context:backdropWindow];
 	}
 	return backdropWindow;
 	
@@ -152,7 +116,7 @@
 		[[self window] center];
 	[[self window] setFrameAutosaveName:@"CubeInterfaceWindow"];
   [[self window] setFrame:constrainRectToRect([[self window] frame] , [[[self window] screen] visibleFrame]) display:NO];
-  [[dSelector cell] setIconSize:NSMakeSize(512,512)];
+  [(QSObjectCell *)[dSelector cell] setIconSize:NSMakeSize(512,512)];
 	standardRect = centerRectInRect([[self window] frame] , [[NSScreen mainScreen] frame]);
 	positionC = [dSelector frame];
 	positionL = [aSelector frame];
@@ -185,7 +149,6 @@
   
   
   [window setShowEffect:[NSDictionary dictionaryWithObjectsAndKeys:@"show", @"type", [NSNumber numberWithFloat:0.15] , @"duration", nil]];
-  //		[window setHideEffect:[NSDictionary dictionaryWithObjectsAndKeys:@"QSShrinkEffect", @"transformFn", @"hide", @"type", [NSNumber numberWithFloat:.25] , @"duration", nil]];
   //	
 	[window setWindowProperty:[NSDictionary dictionaryWithObjectsAndKeys:@"QSExplodeEffect", @"transformFn", @"hide", @"type", [NSNumber numberWithFloat:0.2] , @"duration", nil]
                           forKey:kQSWindowExecEffect];
@@ -193,9 +156,6 @@
 	[window setWindowProperty:[NSDictionary dictionaryWithObjectsAndKeys:@"hide", @"type", [NSNumber numberWithFloat:0.15] , @"duration", nil]
                           forKey:kQSWindowFadeEffect];
 	
-	//	[window setWindowProperty:[NSDictionary dictionaryWithObjectsAndKeys:@"QSShrinkEffect", @"transformFn", @"hide", @"type", [NSNumber numberWithFloat:0.333] , @"duration", nil, [NSNumber numberWithFloat:0.25] , @"brightnessB", @"QSStandardBrightBlending", @"brightnessFn", nil]
-  //						   forKey:kQSWindowCancelEffect];
-  //
   
   [[[self window] contentView] bind:@"highlightColor"
                                    toObject:[NSUserDefaultsController sharedUserDefaultsController]
@@ -227,29 +187,11 @@
                                    toObject:[NSUserDefaultsController sharedUserDefaultsController]
                                withKeyPath:@"values.interface.borderWidth"
                                     options:nil];
-  
-  //    [[self window]  bind:@"hasShadow"
-  //				toObject:[NSUserDefaultsController sharedUserDefaultsController]
-  //			 withKeyPath:@"values.QSBezelHasShadow"
-  //				 options:nil];
-  //    
-  //	[details bind:@"textColor"
-  //		 toObject:[NSUserDefaultsController sharedUserDefaultsController]
-  //	  withKeyPath:@"values.QSAppearance1T"
-  //		  options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-  //	
-  //	[commandView bind:@"textColor"
-  //			 toObject:[NSUserDefaultsController sharedUserDefaultsController]
-  //		  withKeyPath:@"values.QSAppearance1T"
-  //			  options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-	
-	
-  //    [[self window] setMovableByWindowBackground:NO];
-  //    [(QSWindow *)[self window] setFastShow:YES];
+
 	
 	
   NSArray *theControls = [NSArray arrayWithObjects:dSelector, aSelector, iSelector, nil];
-  foreach(theControl, theControls) {
+  for(QSSearchObjectView *theControl in theControls) {
 		//NSCell *theCell = [[[QSFancyObjectCell alloc] init] autorelease];
 		//[theControl setCell:theCell];
 		
@@ -263,17 +205,9 @@
 		
 		
     [(QSObjectCell *)theCell setShowDetails:NO];
-		//	[(QSObjectCell *)theCell setImagePosition:NSImageOnly];
-		//   [(QSObjectCell *)theCell setTextColor:[NSColor whiteColor]];
-		// [(QSObjectCell *)theCell setState:NSOnState];
-		[theCell unbind:@"highlightColor"];
-		[theCell setHighlightColor:[NSColor clearColor]];
-		//		[theCell bind:@"highlightColor"
-		//			 toObject:[NSUserDefaultsController sharedUserDefaultsController]
-		//		  withKeyPath:@"values.QSAppearance1A"
-		//			  options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-		//		
-		[theCell bind:@"textColor"
+			[theCell unbind:@"highlightColor"];
+		[(QSObjectCell *)theCell setHighlightColor:[NSColor clearColor]];
+			[theCell bind:@"textColor"
             toObject:[NSUserDefaultsController sharedUserDefaultsController]
         withKeyPath:@"values.interface.textColor"
              options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
@@ -283,16 +217,6 @@
                              toObject:[NSUserDefaultsController sharedUserDefaultsController]
                          withKeyPath:@"values.interface.textColor"
                               options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-	
-  //	[[searchTextField cell] bind:@"textColor"
-  //						toObject:[NSUserDefaultsController sharedUserDefaultsController]
-  //					 withKeyPath:@"values.interface.textColor"
-  //						 options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-  //	[[searchTextField cell] bind:@"backgroundColor"
-  //						toObject:[NSUserDefaultsController sharedUserDefaultsController]
-  //					 withKeyPath:@"values.interface.shadowColor"
-  //						 options:[NSDictionary dictionaryWithObject:NSUnarchiveFromDataTransformerName forKey:@"NSValueTransformerName"]];
-  //	
 	[[commandField cell] bind:@"textColor"
                          toObject:[NSUserDefaultsController sharedUserDefaultsController]
                      withKeyPath:@"values.interface.textColor"
@@ -350,7 +274,6 @@
   [super expandWindow:sender];
 }
 - (void)contractWindow:(id)sender {
-  //	//	NSLog(@"cont");
   //	if ([self expanded])
   //        [[self window] setFrame:[self rectForState:NO] display:YES animate:YES]; 	
   [super contractWindow:sender];
@@ -377,45 +300,21 @@
 
 
 - (void)updateDetailsString {
-  //	NSControl *firstResponder = (NSControl *)[[self window] firstResponder];
-  //	NSString *details = nil;
-  //	if ([firstResponder respondsToSelector:@selector(objectValue)]) {
-  //		id object = [firstResponder objectValue];
-  //		if ([object respondsToSelector:@selector(details)]) {
-  //			details = [object details];
-  //		}
-  //		
-  //		NSString *string = [firstResponder matchedString];
-  //		[searchTextField setStringValue:(string && ![string hasPrefix:@"QSActionMnemonic"]) ?[string uppercaseString] :@""];
-  //	//	[searchTextField setAttributedStringValue:[self fancyStringForView:firstResponder]];
-  //	}
-  //	[detailsTextField setStringValue:details?details:@""];
-  //	
-  //	
-  //	//NSLog(@"update");
-  //	NSString *command = [[self currentCommand] description];
-  //	if (command) 	[commandField setStringValue:command?command:@""];
+    NSString *commandName = [[self currentCommand] name];
+    if (!commandName) commandName = @"";
+    [commandView setStringValue:([dSelector objectValue] ? commandName : @"Quicksilver")];
+  	NSString *command = [[self currentCommand] description];
+  	if (command) 	[commandField setStringValue:command?command:@""];
 }
-
-
 
 - (void)firstResponderChanged:(NSResponder *)aResponder {
 	//	logRect([[self window] frame]);
 	[super firstResponderChanged:aResponder];
 	[self updateDetailsString];
 	
-	//	if (aResponder == dSelector) {
-	//		QSCGSTransition *transition = [QSCGSTransition transitionWithWindow:[self window] type:CGSCube option:CGSRight];
-	//		[[self window] display];
-	//		[transition runTransition:0.3];
-	//		usleep(300000);
-	//	}
-	
-	id responder = [[self window] firstResponder];
-  
 	if (aResponder == dSelector || aResponder == aSelector || aResponder == iSelector) {
 		[[[self window] contentView] setNeedsDisplay:YES];
-		
+	
 		//if (aResponder == dSelector && last
 		//NSLog(@"last %@ %@ %@", lastSearchField, aResponder, dSelector);
 		if ((aResponder == aSelector && lastSearchField == dSelector)
@@ -423,7 +322,7 @@
         || (aResponder == iSelector && lastSearchField == dSelector) ) {//forward rotation
 			
 			QSCGSTransition *transition = [QSCGSTransition transitionWithWindow:[self window] type:CGSCube option:CGSLeft];
-			[self updateSearchViewsForTarget:aResponder];
+			[self updateSearchViewsForTarget:(QSSearchObjectView *)aResponder];
 			[[self window] display];
 			[transition runTransition:0.3];
 			
@@ -441,7 +340,7 @@
         
 			}
 			
-			[self updateSearchViewsForTarget:aResponder];
+			[self updateSearchViewsForTarget:(QSSearchObjectView *)aResponder];
 			
 			QSCGSTransition *transition = [QSCGSTransition transitionWithWindow:[self window] type:CGSCube option:CGSRight];
 			[[self window] display];
@@ -449,10 +348,10 @@
 			
 		} else {
       //	NSLog(@"else!");
-			[self updateSearchViewsForTarget:aResponder];
+			[self updateSearchViewsForTarget:(QSSearchObjectView *)aResponder];
 		}
 		//usleep(200000); 	
-		lastSearchField = aResponder;
+		lastSearchField = (QSSearchObjectView *)aResponder;
 	}
 	
 	if (!aResponder)
@@ -500,60 +399,6 @@
 	[self updateDetailsString];
 }
 
-- (NSAttributedString *)fancyStringForView:()view {
-	QSObject *object = [[view cell] objectValue]; // Ignore collections
-	
-	NSString *matchedString = [view matchedString];
-	NSIndexSet *hitMask = nil; ;
-	int stringIndex = [[object ranker] matchedStringForAbbreviation:matchedString hitmask:&hitMask inContext:nil];
-	NSLog(@"%d %@ %@", stringIndex, matchedString, hitMask);
-	
-	
-	NSString *nameString = nil;
-	if (stringIndex == 0) nameString = [object name];
-	else if (stringIndex == 1) nameString = [object label];
-	
-	if (!nameString) nameString = [object label];
-	if (!nameString) nameString = [object name];
-	if (!nameString) nameString = @"";
-	
-	NSColor *fadedColor = [[NSColor blackColor] colorWithAlphaComponent:0.30];
-	
-	
-	NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                              [NSColor blackColor] , NSForegroundColorAttributeName,
-                              nil];
-	NSDictionary *autocompleteAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                          fadedColor, NSForegroundColorAttributeName,
-                                          nil];
-	
-	
-	NSMutableAttributedString *titleString = [[[NSMutableAttributedString alloc] initWithString:nameString?nameString:@"???"] autorelease];
-	[titleString setAttributes:autocompleteAttributes range:NSMakeRange(0, [titleString length])];
-	
-	
-	int i = 0;
-	int j = 0;
-	unsigned int hits[[titleString length]];
-	int count = [hitMask getIndexes:(unsigned int *)&hits maxCount:[titleString length] inIndexRange:nil];
-	
-  
-	
-	//       NSLog(@"hit %@ %@", [titleString string] , hitMask);
-	for(i = 0; i<count; i += j) {
-		for (j = 1; i+j<count && hits[i+j-1] +1 == hits[i+j]; j++);
-		//     NSLog(@"hit (%d, %d) ", hits[i] , j);
-		[titleString addAttributes:attributes range:NSMakeRange(hits[i] , j)];
-		//                 NSLog(@"5");
-	}
-	
-	
-	
-	
-	return titleString;
-}
-
-
 - (void)searchView:(QSSearchObjectView *)view changedString:(NSString *)string {
 	//	NSLog(@"string %@ %@", string, view); 	
 	
@@ -568,31 +413,4 @@
 		}
 	}
 }
-//
-//-(void)searchView:(QSSearchObjectView *)view changedResults:(NSArray *)array {
-//	//	NSLog(@"string %@ %@", string, view); 	
-//	int count = [array count];
-//	NSString *string = [NSString stringWithFormat:@"%@ %@%@", count?[NSNumber numberWithInt:count] :@"No", view == aSelector?@"action":@"item", ESS(count)];
-//	//if (!count) string = @"No items";
-//	if (string) {
-//		if (view == dSelector)
-//			[dSearchCount setStringValue:string];
-//		if (view == aSelector)
-//			[aSearchCount setStringValue:string];
-//		if (view == iSelector)
-//			[iSearchCount setStringValue:string];
-//		
-//	}
-//}
-//
-//-(void)searchView:(QSSearchObjectView *)view resultsVisible:(BOOL)resultsVisible {
-//	if (view == dSelector)
-//		[dSearchResultDisclosure setState:resultsVisible];
-//	if (view == aSelector)
-//		[aSearchResultDisclosure setState:resultsVisible];
-//	if (view == iSelector)
-//		[iSearchResultDisclosure setState:resultsVisible];
-//}
-
-
 @end

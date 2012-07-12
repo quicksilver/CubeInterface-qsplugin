@@ -11,8 +11,8 @@
 	NSColor *endColor;
 	NSColor *highlightColor;
 	NSColor *borderColor;
-	int glassType;
-	float borderWidth;
+	NSInteger glassType;
+	CGFloat borderWidth;
 }
 - (NSColor *) startColor;
 - (void) setStartColor: (NSColor *) newStartColor;
@@ -22,7 +22,7 @@
 - (void) setHighlightColor: (NSColor *) newHighlightColor;
 - (NSColor *) borderColor;
 - (void) setBorderColor: (NSColor *) newBorderColor;
-- (int) glassType;
-- (void) setGlassType: (int) newGlassType;
+- (NSInteger) glassType;
+- (void) setGlassType: (NSInteger) newGlassType;
 
 @end

@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Cube Interface</string>
 	<key>CFBundleExecutable</key>
 	<string>Cube Interface</string>
 	<key>CFBundleIdentifier</key>
@@ -14,8 +16,10 @@
 	<string>Cube Interface</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>2.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>8C0</string>
+	<string>8E6</string>
 	<key>QSDefaults</key>
 	<dict>
 		<key>interface.backdropColor</key>
