@@ -12,30 +12,25 @@
 @interface QSShadowView : NSView {
 	NSView *targetView;
 	NSColor *color;
-	float blur;
-	float distance;
-	float angle;
-	float expand;
+	CGFloat blur;
+	CGFloat distance;
+	CGFloat angle;
+	CGFloat expand;
 }
-
-- (NSSize)preferredSize;
 - (NSRect)paddedFrameForFrame:(NSRect)frame;
-
+- (void)updatePosition;
 
 - (NSView *) targetView;
 - (void) setTargetView: (NSView *) newTargetView;
 - (NSColor *) color;
 - (void) setColor: (NSColor *) newColor;
-- (float) blur;
-- (void) setBlur: (float) newBlur;
-- (float) distance;
-- (void) setDistance: (float) newDistance;
-- (float) angle;
-- (void) setAngle: (float) newAngle;
-- (float) expand;
-- (void) setExpand: (float) newExpand;
-
-
-
+- (CGFloat) blur;
+- (void) setBlur: (CGFloat) newBlur;
+- (CGFloat) distance;
+- (void) setDistance: (CGFloat) newDistance;
+- (CGFloat) angle;
+- (void) setAngle: (CGFloat) newAngle;
+- (CGFloat) expand;
+- (void) setExpand: (CGFloat) newExpand;
 
 @end
