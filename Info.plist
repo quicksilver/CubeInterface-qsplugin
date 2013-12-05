@@ -19,35 +19,56 @@
 	<key>CFBundleSignature</key>
 	<string>2.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>8E8</string>
+	<string>8EB</string>
 	<key>QSDefaults</key>
 	<dict>
 		<key>interface.backdropColor</key>
-		<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgCDzcwMP4Y=</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMDhAJmZgCDzcwMP4Y=
+		</data>
 		<key>interface.borderColor</key>
-		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZoM/AAAAgz51wo+G</data>
+		<data>
+		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMDhAJmZoM/AAAAgz51wo+G
+		</data>
 		<key>interface.borderWidth</key>
 		<string>1.5</string>
 		<key>interface.bottomColor</key>
-		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgEBhg==</data>
+		<data>
+		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMDhAJmZgEBhg==
+		</data>
 		<key>interface.glassColor</key>
-		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARmZmZmgz97h8cBgz98pdaDPkKPXIY=</data>
+		<data>
+		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMBhARmZmZmgz97h8cBgz98pdaDPkKPXIY=
+		</data>
 		<key>interface.glassType</key>
 		<integer>3</integer>
 		<key>interface.shadowBlur</key>
 		<string>10</string>
 		<key>interface.shadowColor</key>
-		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgCDPhmZmoY=</data>
+		<data>
+		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMDhAJmZgCDPhmZmoY=
+		</data>
 		<key>interface.shadowDirection</key>
-		<real>180</real>
+		<real>180.0</real>
 		<key>interface.shadowDistance</key>
 		<string>4</string>
 		<key>interface.shadowSize</key>
 		<string>0</string>
 		<key>interface.textColor</key>
-		<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARmZmZmAAAAAYY=</data>
+		<data>
+		BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMBhARmZmZmAAAAAYY=
+		</data>
 		<key>interface.topColor</key>
-		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZoM/QAAAAYY=</data>
+		<data>
+		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
+		AWMDhAJmZoM/QAAAAYY=
+		</data>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -60,7 +81,7 @@
 		<key>description</key>
 		<string>Cube Interface</string>
 		<key>extendedDescription</key>
-		<string>A rotating cube interface with a variety of &lt;a href=&quot;qs://preferences#QSCubeInterfacePrefPane&quot;&gt;options&lt;/a&gt;</string>
+		<string>A rotating cube interface with a variety of &lt;a href="qs://preferences#QSCubeInterfacePrefPane"&gt;options&lt;/a&gt;</string>
 		<key>icon</key>
 		<string></string>
 	</dict>
