@@ -17,42 +17,27 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleSignature</key>
-	<string>2.0.0</string>
+	<string>2.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>8E7</string>
+	<string>8E8</string>
 	<key>QSDefaults</key>
 	<dict>
 		<key>interface.backdropColor</key>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMDhAJmZgCDzcwMP4Y=
-		</data>
+		<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgCDzcwMP4Y=</data>
 		<key>interface.borderColor</key>
-		<data>
-		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMDhAJmZoM/AAAAgz51wo+G
-		</data>
+		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZoM/AAAAgz51wo+G</data>
 		<key>interface.borderWidth</key>
 		<string>1.5</string>
 		<key>interface.bottomColor</key>
-		<data>
-		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMDhAJmZgEBhg==
-		</data>
+		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgEBhg==</data>
 		<key>interface.glassColor</key>
-		<data>
-		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMBhARmZmZmgz97h8cBgz98pdaDPkKPXIY=
-		</data>
+		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARmZmZmgz97h8cBgz98pdaDPkKPXIY=</data>
 		<key>interface.glassType</key>
 		<integer>3</integer>
 		<key>interface.shadowBlur</key>
 		<string>10</string>
 		<key>interface.shadowColor</key>
-		<data>
-		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMDhAJmZgCDPhmZmoY=
-		</data>
+		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZgCDPhmZmoY=</data>
 		<key>interface.shadowDirection</key>
 		<real>180</real>
 		<key>interface.shadowDistance</key>
@@ -60,15 +45,9 @@
 		<key>interface.shadowSize</key>
 		<string>0</string>
 		<key>interface.textColor</key>
-		<data>
-		BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMBhARmZmZmAAAAAYY=
-		</data>
+		<data>BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARmZmZmAAAAAYY=</data>
 		<key>interface.topColor</key>
-		<data>
-		BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWE
-		AWMDhAJmZoM/QAAAAYY=
-		</data>
+		<data>BAt0eXBlZHN0cmVhbYED6IQBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMDhAJmZoM/QAAAAYY=</data>
 	</dict>
 	<key>QSPlugIn</key>
 	<dict>
@@ -81,7 +60,7 @@
 		<key>description</key>
 		<string>Cube Interface</string>
 		<key>extendedDescription</key>
-		<string>A rotating cube interface with a variety of &lt;a href="qs://preferences#QSCubeInterfacePrefPane"&gt;options&lt;/a&gt;</string>
+		<string>A rotating cube interface with a variety of &lt;a href=&quot;qs://preferences#QSCubeInterfacePrefPane&quot;&gt;options&lt;/a&gt;</string>
 		<key>icon</key>
 		<string></string>
 	</dict>
@@ -116,7 +95,7 @@
 	<key>QSRequirements</key>
 	<dict>
 		<key>version</key>
-		<string>3779</string>
+		<string>4001</string>
 	</dict>
 </dict>
 </plist>
