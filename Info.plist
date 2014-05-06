@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleSignature</key>
-	<string>2.0.1</string>
+	<string>2.0.2</string>
 	<key>CFBundleVersion</key>
-	<string>8EB</string>
+	<string>8EC</string>
 	<key>QSDefaults</key>
 	<dict>
 		<key>interface.backdropColor</key>
@@ -115,6 +115,8 @@
 	</dict>
 	<key>QSRequirements</key>
 	<dict>
+		<key>maxHostVersion</key>
+		<string>4007</string>
 		<key>version</key>
 		<string>4001</string>
 	</dict>
