@@ -16,7 +16,7 @@
 	<string>Cube Interface</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
-	<key>CFBundleSignature</key>
+	<key>CFBundleShortVersionString</key>
 	<string>2.0.4</string>
 	<key>CFBundleVersion</key>
 	<string>8EF</string>
