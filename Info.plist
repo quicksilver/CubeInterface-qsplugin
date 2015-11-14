@@ -115,10 +115,10 @@
 	</dict>
 	<key>QSRequirements</key>
 	<dict>
-		<key>maxHostVersion</key>
-		<string>4007</string>
+		<key>osRequired</key>
+		<string>10.9</string>
 		<key>version</key>
-		<string>4001</string>
+		<string>4015</string>
 	</dict>
 </dict>
 </plist>
